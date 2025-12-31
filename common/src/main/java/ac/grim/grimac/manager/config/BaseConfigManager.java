@@ -21,7 +21,7 @@ public class BaseConfigManager {
     @Getter
     private boolean printAlertsToConsole = false;
     @Getter
-    private String prefix = "&bGrim &8»";
+    private String prefix = "&bGrom &8»";
     @Getter
     private String disconnectTimeout;
     @Getter

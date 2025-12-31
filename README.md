@@ -2,36 +2,17 @@
  <h1>GromAC</h1>
 
  <div>
-  <a href="https://github.com/GrimAnticheat/Grim/actions/workflows/gradle-publish.yml">
+  <a href="https://github.com/TheJvex/Grom/actions/workflows/gradle-publish.yml">
    <img alt="Workflow" src="https://img.shields.io/github/actions/workflow/status/GrimAnticheat/Grim/gradle-publish.yml?style=flat&logo=github"/>
   </a>&nbsp;&nbsp;
-  <a href="https://modrinth.com/plugin/grimac">
-   <img alt="Modrinth" src="https://img.shields.io/modrinth/v/LJNGWSvH?style=flat&label=version&logo=modrinth">
-  </a>&nbsp;&nbsp;
-  <a href="https://modrinth.com/plugin/grimac#download">
-   <img alt="Downloads" src="https://img.shields.io/modrinth/dt/LJNGWSvH?style=flat&logo=modrinth&label=downloads&link=https%3A%2F%2Fmodrinth.com%2Fplugin%2Fgrimac%23download">
-  </a>&nbsp;&nbsp;
-  <a href="https://discord.grim.ac">
-   <img alt="Discord" src="https://img.shields.io/discord/811396969670901800?style=flat&label=discord&logo=discord">
-  </a>
  </div>
  <br>
 </div>
 
-GrimAC is an open source Minecraft anticheat designed to support the latest versions of Minecraft.
+GromAC is an open source Minecraft anticheat designed to support the latest versions of Minecraft.
 It currently supports minecraft versions 1.8–1.21. Geyser players are fully exempt from the anticheat to prevent false positives.
-This project is considered feature-complete for the 2.0 (open-source) branch. If you would like a bug fix or enhancement and cannot sponsor the work, pull requests are welcome.
-A premium version is planned, which will offer additional subscription-based paid checks, such as heuristics.
+This project is in first version. If you would like a bug fix or enhancement and cannot sponsor the work, pull requests are welcome.
 
-## Downloads
-
-- Latest updates:
-  - **[Modrinth](https://modrinth.com/plugin/grimac)** *(recommended)*
-  - GitHub
-  artifacts: [Bukkit](https://nightly.link/GrimAnticheat/Grim/workflows/gradle-publish/2.0/grimac-bukkit.zip), [Fabric](https://nightly.link/GrimAnticheat/Grim/workflows/gradle-publish/2.0/grimac-fabric.zip) *(bleeding edge)*
-- Major releases only:
-  - ~~[Hangar](https://hangar.papermc.io/GrimAnticheat/GrimAnticheat)~~
-  - ~~[SpigotMC](https://www.spigotmc.org/resources/grim-anticheat.99923/)~~
 
 ## Requirements & Installation
 
@@ -54,22 +35,17 @@ If you use a proxy such as Velocity or Bungeecord:
 See [Contributing](CONTRIBUTING.md) for more information about contributing and what our guidelines
 are.
 
-## Developer Plugin API
-
-Grim's plugin API allows you to integrate Grim into your own plugins. Visit
-the [plugin API repository](https://github.com/GrimAnticheat/GrimAPI) for the source code and more
-information.
 
 ## Compiling From Source
 
-1. `git clone https://github.com/GrimAnticheat/Grim.git`
-2. `cd Grim`
+1. `git clone https://github.com/TheJvex/Grom.git`
+2. `cd Grom`
 3. `./gradlew build`
 4. The final jars will compile into the `<platform>/build/libs` folders
 
-## Grim Supremacy
+## Grom Supremacy
 
-What makes Grim stand out against other anticheats?
+What makes Grom stand out against other anticheats?
 
 ### Movement Simulation Engine
 

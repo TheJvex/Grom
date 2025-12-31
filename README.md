@@ -1,5 +1,6 @@
 <div align="center">
  <h1>GromAC</h1>
+ <p>Fully async, multithreaded, predictive simulation anticheat. <b>But with Heuristics detections modules.</b></p>
 
  <div>
   <a href="https://github.com/TheJvex/Grom/actions/workflows/gradle-publish.yml">
@@ -9,39 +10,42 @@
  <br>
 </div>
 
-GromAC is an open source Minecraft anticheat designed to support the latest versions of Minecraft.
-It currently supports minecraft versions 1.8–1.21. Geyser players are fully exempt from the anticheat to prevent false positives.
-This project is in first version. If you would like a bug fix or enhancement and cannot sponsor the work, pull requests are welcome.
+GromAC is an open source Minecraft anticheat designed to support the latest versions of Minecraft (1.8–1.21). 
+It maintains the powerful simulation engine of GrimAC, **but with Heuristics detections modules** integrated to stop advanced ghost clients.
 
+---
 
-## Requirements & Installation
+### Hybrid Heuristics (The Skidder's Touch)
 
-- Java 17 or higher. *For more details, see [Updating-to-Java-17](https://github.com/GrimAnticheat/Grim/wiki/Updating-to-Java-17).*
-- A Spigot, Paper, Folia, or Fabric server environment. *For more details, see [Supported-environments](https://github.com/GrimAnticheat/Grim/wiki/Supported-environments).*
+I'll be honest: **I am a skidder and I admit it.** I've taken elite logic from several high-end open-source projects to build GromAC. Why? Because while Grim's simulation is god-tier, it lacked the basic heuristic and statistical detections needed to stop modern ghost clients. 
 
-If you use a proxy such as Velocity or Bungeecord:
-- If you use Geyser, Floodgate must be installed on the backend server (where Grim is) so Grim can access the Floodgate API.
-- If you use ViaVersion, it must be installed on the backend server (where Grim is) ONLY.
-  Grim does not support having ViaVersion installed on the proxy, even if it is also installed on the backend.
+GromAC fills those gaps by integrating the following 18 enhanced checks:
 
-## Resources
+#### Combat & KillAura
+*   **KAZero [Kauri]:** Perfect center hitbox aim lock.
+*   **AuraPostSnap [LAC]:** Sharp rotation after successful hits.
+*   **AuraMovement [FlopAC]:** Linear motion during player attacks.
+*   **AimConsistent [Rhys]:** Stable standard deviation rotation patterns.
+*   **AimConstant [Rhys]:** Constant mouse rotation speed detection.
+*   **AimGCD [Kauri]:** Mouse sensitivity grid pixel alignment.
+*   **AimIR [FlopAC]:** Smoothness and inertia ratio analysis.
+*   **AimRounding [Kauri]:** Mathematical rounding in mouse sensitivity.
+*   **AimSnap [Kauri]:** Brutal one-tick rotation snap detection.
 
-- For documentation and examples visit the [Wiki](https://github.com/GrimAnticheat/Grim/wiki).
-- For answers to commonly asked questions visit the [FAQ](https://github.com/GrimAnticheat/Grim/wiki/FAQ).
-- For community support and project discussion join our [Discord](https://discord.grim.ac).
+#### Click Analysis
+*   **AutoclickerA [Kauri]:** Raw clicks per second count.
+*   **AutoclickerB [Kauri]:** Motion and click synchronization timing.
+*   **AutoclickerC [Kauri]:** Robotic click interval consistency detection.
+*   **AutoclickerD [Kauri]:** 1.8 AutoBlock synchronization packet check.
+*   **AutoclickerE [Rhys]:** Low click interval variety detection.
+*   **AutoclickerF [Artemis]:** Identical statistical click signature detection.
 
-## Pull Requests
+#### World (Scaffold)
+*   **ScaffoldSync [Kauri]:** Packet timing during block placement.
+*   **ScaffoldRatio [Kauri]:** Relative distance during block placement.
+*   **ScaffoldDirection [Truthful]:** Movement against block face direction.
 
-See [Contributing](CONTRIBUTING.md) for more information about contributing and what our guidelines
-are.
-
-
-## Compiling From Source
-
-1. `git clone https://github.com/TheJvex/Grom.git`
-2. `cd Grom`
-3. `./gradlew build`
-4. The final jars will compile into the `<platform>/build/libs` folders
+These additions make GromAC a monster, combining the simulation with the statistical analysis.
 
 ## Grom Supremacy
 
@@ -100,33 +104,34 @@ What makes Grom stand out against other anticheats?
 * All systems are designed to be highly secure and mathematically impossible to bypass
 * For example, the prediction engine knows all possible movements and cannot be bypassed
 
-### Hybrid Heuristics
+## Requirements & Installation
 
-I'll be honest: **I am a skidder and I admit it.** I've taken elite logic from several high-end open-source projects to build GromAC. Why? Because while Grim's simulation is god-tier, it lacked the basic heuristic and statistical detections needed to stop modern ghost clients. 
+- Java 17 or higher. *For more details, see [Updating-to-Java-17](https://github.com/GrimAnticheat/Grim/wiki/Updating-to-Java-17).*
+- A Spigot, Paper, Folia, or Fabric server environment. *For more details, see [Supported-environments](https://github.com/GrimAnticheat/Grim/wiki/Supported-environments).*
 
-GromAC fills those gaps by integrating the following 18 enhanced checks:
+If you use a proxy such as Velocity or Bungeecord:
+- If you use Geyser, Floodgate must be installed on the backend server (where Grim is) so Grim can access the Floodgate API.
+- If you use ViaVersion, it must be installed on the backend server (where Grim is) ONLY.
+  Grim does not support having ViaVersion installed on the proxy, even if it is also installed on the backend.
 
-#### Combat & KillAura
-*   **KAZero [Kauri]:** Perfect center hitbox aim lock.
-*   **AuraPostSnap [LAC]:** Sharp rotation after successful hits.
-*   **AuraMovement [FlopAC]:** Linear motion during player attacks.
-*   **AimConsistent [Rhys]:** Stable standard deviation rotation patterns.
-*   **AimConstant [Rhys]:** Constant mouse rotation speed detection.
-*   **AimGCD [Kauri]:** Mouse sensitivity grid pixel alignment.
-*   **AimIR [FlopAC]:** Smoothness and inertia ratio analysis.
-*   **AimRounding [Kauri]:** Mathematical rounding in mouse sensitivity.
-*   **AimSnap [Kauri]:** Brutal one-tick rotation snap detection.
+## Resources
 
-#### Click Analysis
-*   **AutoclickerA [Kauri]:** Raw clicks per second count.
-*   **AutoclickerB [Kauri]:** Motion and click synchronization timing.
-*   **AutoclickerC [Kauri]:** Robotic click interval consistency detection.
-*   **AutoclickerD [Kauri]:** 1.8 AutoBlock synchronization packet check.
-*   **AutoclickerE [Rhys]:** Low click interval variety detection.
-*   **AutoclickerF [Artemis]:** Identical statistical click signature detection.
+- For documentation and examples visit the [Wiki](https://github.com/GrimAnticheat/Grim/wiki).
+- For answers to commonly asked questions visit the [FAQ](https://github.com/GrimAnticheat/Grim/wiki/FAQ).
+- For community support and project discussion join our [Discord](https://discord.grim.ac).
 
-#### World (Scaffold)
-*   **ScaffoldSync [Kauri]:** Packet timing during block placement.
+## Pull Requests
+
+See [Contributing](CONTRIBUTING.md) for more information about contributing and what our guidelines
+are.
+
+
+## Compiling From Source
+
+1. `git clone https://github.com/TheJvex/Grom.git`
+2. `cd Grom`
+3. `./gradlew build`
+4. The final jars will compile into the `<platform>/build/libs` folders
 *   **ScaffoldRatio [Kauri]:** Relative distance during block placement.
 *   **ScaffoldDirection [Truthful]:** Movement against block face direction.
 

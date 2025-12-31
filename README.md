@@ -118,7 +118,7 @@ If you use a proxy such as Velocity or Bungeecord:
 
 - For documentation and examples visit the [Wiki](https://github.com/GrimAnticheat/Grim/wiki).
 - For answers to commonly asked questions visit the [FAQ](https://github.com/GrimAnticheat/Grim/wiki/FAQ).
-- For community support and project discussion join our [Discord](https://discord.grim.ac).
+- For support contact me on Discord, my user is: Jvex.
 
 ## Pull Requests
 

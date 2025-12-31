@@ -100,7 +100,7 @@ What makes Grom stand out against other anticheats?
 * All systems are designed to be highly secure and mathematically impossible to bypass
 * For example, the prediction engine knows all possible movements and cannot be bypassed
 
-### Hybrid Heuristics (The Skidder's Touch)
+### Hybrid Heuristics
 
 I'll be honest: **I am a skidder and I admit it.** I've taken elite logic from several high-end open-source projects to build GromAC. Why? Because while Grim's simulation is god-tier, it lacked the basic heuristic and statistical detections needed to stop modern ghost clients. 
 

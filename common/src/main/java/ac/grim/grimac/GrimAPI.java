@@ -135,7 +135,7 @@ public final class GrimAPI {
 
     private void checkInitialized() {
         if (!initialized) {
-            throw new IllegalStateException("GrimAPI has not been initialized!");
+            throw new IllegalStateException("GromAPI has not been initialized!");
         }
     }
 

@@ -99,3 +99,35 @@ What makes Grom stand out against other anticheats?
 
 * All systems are designed to be highly secure and mathematically impossible to bypass
 * For example, the prediction engine knows all possible movements and cannot be bypassed
+
+### Hybrid Heuristics (The Skidder's Touch)
+
+I'll be honest: **I am a skidder and I admit it.** I've taken elite logic from several high-end open-source projects to build GromAC. Why? Because while Grim's simulation is god-tier, it lacked the basic heuristic and statistical detections needed to stop modern ghost clients. 
+
+GromAC fills those gaps by integrating the following 18 enhanced checks:
+
+#### Combat & KillAura
+*   **KAZero [Kauri]:** Perfect center hitbox aim lock.
+*   **AuraPostSnap [LAC]:** Sharp rotation after successful hits.
+*   **AuraMovement [FlopAC]:** Linear motion during player attacks.
+*   **AimConsistent [Rhys]:** Stable standard deviation rotation patterns.
+*   **AimConstant [Rhys]:** Constant mouse rotation speed detection.
+*   **AimGCD [Kauri]:** Mouse sensitivity grid pixel alignment.
+*   **AimIR [FlopAC]:** Smoothness and inertia ratio analysis.
+*   **AimRounding [Kauri]:** Mathematical rounding in mouse sensitivity.
+*   **AimSnap [Kauri]:** Brutal one-tick rotation snap detection.
+
+#### Click Analysis
+*   **AutoclickerA [Kauri]:** Raw clicks per second count.
+*   **AutoclickerB [Kauri]:** Motion and click synchronization timing.
+*   **AutoclickerC [Kauri]:** Robotic click interval consistency detection.
+*   **AutoclickerD [Kauri]:** 1.8 AutoBlock synchronization packet check.
+*   **AutoclickerE [Rhys]:** Low click interval variety detection.
+*   **AutoclickerF [Artemis]:** Identical statistical click signature detection.
+
+#### World (Scaffold)
+*   **ScaffoldSync [Kauri]:** Packet timing during block placement.
+*   **ScaffoldRatio [Kauri]:** Relative distance during block placement.
+*   **ScaffoldDirection [Truthful]:** Movement against block face direction.
+
+These additions make GromAC good, combining the simulation with the statistical analysis.

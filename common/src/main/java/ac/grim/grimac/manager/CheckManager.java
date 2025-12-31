@@ -1,5 +1,23 @@
 package ac.grim.grimac.manager;
 
+import ac.grim.grimac.checks.impl.aim.AimGCD;
+import ac.grim.grimac.checks.impl.aim.AimSnap;
+import ac.grim.grimac.checks.impl.aim.AimConstant;
+import ac.grim.grimac.checks.impl.aim.AimConsistent;
+import ac.grim.grimac.checks.impl.aim.AimRounding;
+import ac.grim.grimac.checks.impl.aim.AimIR;
+import ac.grim.grimac.checks.impl.combat.AutoclickerA;
+import ac.grim.grimac.checks.impl.combat.AutoclickerB;
+import ac.grim.grimac.checks.impl.combat.AutoclickerC;
+import ac.grim.grimac.checks.impl.combat.AutoclickerD;
+import ac.grim.grimac.checks.impl.combat.AutoclickerE;
+import ac.grim.grimac.checks.impl.combat.AutoclickerF;
+import ac.grim.grimac.checks.impl.combat.killaura.KACalc;
+import ac.grim.grimac.checks.impl.combat.killaura.KAZero;
+import ac.grim.grimac.checks.impl.combat.killaura.AuraMovement;
+import ac.grim.grimac.checks.impl.combat.killaura.AuraPostSnap;
+
+
 import ac.grim.grimac.GrimAPI;
 import ac.grim.grimac.api.AbstractCheck;
 import ac.grim.grimac.checks.impl.aim.AimDuplicateLook;
@@ -152,6 +170,18 @@ public class CheckManager {
                 .put(CrashH.class, new CrashH(player))
                 .put(CrashI.class, new CrashI(player))
                 .put(SetbackBlocker.class, new SetbackBlocker(player)) // Must be last class otherwise we can't check while blocking packets
+                .put(AuraMovement.class, new AuraMovement(player))
+                .put(AutoclickerA.class, new AutoclickerA(player))
+                .put(AutoclickerB.class, new AutoclickerB(player))
+                .put(AutoclickerC.class, new AutoclickerC(player))
+                .put(AutoclickerD.class, new AutoclickerD(player))
+                .put(AutoclickerE.class, new AutoclickerE(player))
+                .put(AutoclickerF.class, new AutoclickerF(player))
+                .put(AimConstant.class, new AimConstant(player))
+                .put(AimConsistent.class, new AimConsistent(player))
+                .put(AimIR.class, new AimIR(player))
+                .put(AuraPostSnap.class, new AuraPostSnap(player))
+                .put(KACalc.class, new KACalc(player))
                 .build();
 
         positionChecks = new ImmutableClassToInstanceMap.Builder<PositionCheck>()
@@ -162,6 +192,9 @@ public class CheckManager {
                 .put(AimProcessor.class, new AimProcessor(player))
                 .put(AimModulo360.class, new AimModulo360(player))
                 .put(AimDuplicateLook.class, new AimDuplicateLook(player))
+                .put(AimGCD.class, new AimGCD(player))
+                .put(AimSnap.class, new AimSnap(player))
+                .put(AimRounding.class, new AimRounding(player))
                 .build();
         vehicleChecks = new ImmutableClassToInstanceMap.Builder<VehicleCheck>()
                 .put(VehiclePredictionRunner.class, new VehiclePredictionRunner(player))
@@ -229,6 +262,9 @@ public class CheckManager {
                 .put(PacketOrderN.class, new PacketOrderN(player))
                 .put(DuplicateRotPlace.class, new DuplicateRotPlace(player))
                 .put(GhostBlockMitigation.class, new GhostBlockMitigation(player))
+                .put(ScaffoldRatio.class, new ScaffoldRatio(player))
+                .put(ScaffoldSync.class, new ScaffoldSync(player))
+                .put(ScaffoldDirection.class, new ScaffoldDirection(player))
                 .build();
 
         prePredictionChecks = new ImmutableClassToInstanceMap.Builder<PacketCheck>()
@@ -263,6 +299,7 @@ public class CheckManager {
                 .put(TransactionOrder.class, new TransactionOrder(player))
                 .put(VehicleC.class, new VehicleC(player))
                 .put(Hitboxes.class, new Hitboxes(player)) // Hitboxes is invoked by Reach
+                .put(KAZero.class, new KAZero(player))
                 .build();
 
         allChecks = new ImmutableClassToInstanceMap.Builder<AbstractCheck>()
@@ -280,6 +317,14 @@ public class CheckManager {
         packetChecksValues = new ArrayList<>(packetChecks.values());
         positionChecksValues = new ArrayList<>(positionChecks.values());
         rotationChecksValues = new ArrayList<>(rotationChecks.values());
+        KACalc kaCalc = (KACalc) packetChecks.get(KACalc.class);
+        if (kaCalc != null) {
+            rotationChecksValues.add(kaCalc);
+        }
+        rotationChecksValues.add((RotationCheck) packetChecks.get(AimConstant.class));
+        rotationChecksValues.add((RotationCheck) packetChecks.get(AimConsistent.class));
+        rotationChecksValues.add((RotationCheck) packetChecks.get(AimIR.class));
+        rotationChecksValues.add((RotationCheck) packetChecks.get(AuraPostSnap.class));
         vehicleChecksValues = new ArrayList<>(vehicleChecks.values());
         prePredictionChecksValues = new ArrayList<>(prePredictionChecks.values());
         blockBreakChecksValues = new ArrayList<>(blockBreakChecks.values());

@@ -16,7 +16,7 @@ public class TAB implements StartableInitable {
         if (PacketEvents.getAPI().getServerManager().getVersion().isNewerThanOrEquals(ServerVersion.V_1_13))
             return;
 
-        LogUtil.warn("GrimAC has detected that you have installed TAB with ViaVersion.");
+        LogUtil.warn("GromAC has detected that you have installed TAB with ViaVersion.");
         LogUtil.warn("Please note that currently, TAB is incompatible as it sends illegal packets to players using versions newer than your server version.");
         LogUtil.warn("You may be able to remedy this by setting `compensate-for-packetevents-bug` to true in the TAB config.");
     }

@@ -12,6 +12,7 @@ import ac.grim.grimac.checks.impl.combat.AutoclickerC;
 import ac.grim.grimac.checks.impl.combat.AutoclickerD;
 import ac.grim.grimac.checks.impl.combat.AutoclickerE;
 import ac.grim.grimac.checks.impl.combat.AutoclickerF;
+import ac.grim.grimac.checks.impl.combat.AutoclickerG;
 import ac.grim.grimac.checks.impl.combat.killaura.KACalc;
 import ac.grim.grimac.checks.impl.combat.killaura.KAZero;
 import ac.grim.grimac.checks.impl.combat.killaura.AuraMovement;
@@ -177,6 +178,7 @@ public class CheckManager {
                 .put(AutoclickerD.class, new AutoclickerD(player))
                 .put(AutoclickerE.class, new AutoclickerE(player))
                 .put(AutoclickerF.class, new AutoclickerF(player))
+                .put(AutoclickerF.class, new AutoclickerG(player))
                 .put(AimConstant.class, new AimConstant(player))
                 .put(AimConsistent.class, new AimConsistent(player))
                 .put(AimIR.class, new AimIR(player))

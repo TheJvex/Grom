@@ -39,6 +39,7 @@ GromAC fills those gaps by integrating the following 18 enhanced checks:
 *   **AutoclickerD [Kauri]:** 1.8 AutoBlock synchronization packet check.
 *   **AutoclickerE [Rhys]:** Low click interval variety detection.
 *   **AutoclickerF [Artemis]:** Identical statistical click signature detection.
+*   **AutoclickerG [BetterGrim]:** Advanced temporal click distribution analysis.
 
 #### World (Scaffold)
 *   **ScaffoldSync [Kauri]:** Packet timing during block placement.

@@ -132,7 +132,3 @@ are.
 2. `cd Grom`
 3. `./gradlew build`
 4. The final jars will compile into the `<platform>/build/libs` folders
-*   **ScaffoldRatio [Kauri]:** Relative distance during block placement.
-*   **ScaffoldDirection [Truthful]:** Movement against block face direction.
-
-These additions make GromAC good, combining the simulation with the statistical analysis.

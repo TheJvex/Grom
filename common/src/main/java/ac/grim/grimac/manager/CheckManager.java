@@ -178,7 +178,7 @@ public class CheckManager {
                 .put(AutoclickerD.class, new AutoclickerD(player))
                 .put(AutoclickerE.class, new AutoclickerE(player))
                 .put(AutoclickerF.class, new AutoclickerF(player))
-                .put(AutoclickerF.class, new AutoclickerG(player))
+                .put(AutoclickerG.class, new AutoclickerG(player))
                 .put(AimConstant.class, new AimConstant(player))
                 .put(AimConsistent.class, new AimConsistent(player))
                 .put(AimIR.class, new AimIR(player))

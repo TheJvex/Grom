@@ -15,9 +15,9 @@ It maintains the powerful simulation engine of GrimAC, **but with Heuristics det
 
 ---
 
-### Hybrid Heuristics (The Skidder's Touch)
+### Hybrid Heuristics 
 
-I'll be honest: **I am a skidder and I admit it.** I've taken elite logic from several high-end open-source projects to build GromAC. Why? Because while Grim's simulation is god-tier, it lacked the basic heuristic and statistical detections needed to stop modern ghost clients. 
+I'll be honest: **I am a skidder and I admit it.** I've taken the logic from several high-end open-source projects to build GromAC. Why? Because while Grim's simulation is god-tier, it lacked the basic heuristic and statistical detections needed to stop modern ghost clients. 
 
 GromAC fills those gaps by integrating the following 18 enhanced checks:
 
@@ -46,7 +46,7 @@ GromAC fills those gaps by integrating the following 18 enhanced checks:
 *   **ScaffoldRatio [Kauri]:** Relative distance during block placement.
 *   **ScaffoldDirection [Truthful]:** Movement against block face direction.
 
-These additions make GromAC a monster, combining the simulation with the statistical analysis.
+These additions make GromAC a monster.
 
 ## Grom Supremacy
 
